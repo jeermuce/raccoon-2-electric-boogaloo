@@ -1,7 +1,7 @@
 import React from "react";
+import Cut from "./_components/Cut";
 import Gallery from "./_components/Gallery";
 import Hero from "./_components/Hero";
-import Cut from "./_components/Cut";
 
 function Landing() {
     return (
