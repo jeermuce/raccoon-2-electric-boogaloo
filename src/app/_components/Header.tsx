@@ -29,7 +29,7 @@ function Header() {
     return (
         <header
             id="header"
-            className=" z-[100] fixed top-0 w-full transition-transform duration-300 -translate-y-full"
+            className=" z-[100] fixed top-0 w-full max-w-[1280px] transition-transform duration-300 -translate-y-full"
         >
             <Nav />
         </header>
