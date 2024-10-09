@@ -5,13 +5,13 @@ function Hero() {
     console.log(backgroundImageURL);
     return (
         <div
-            className="grid grid-cols-1 rounded-bottom-ellipse rounded-t-none  md:grid-cols-2 gap-0  overflow-clip w-[100svw] max-w-[100svw] min-w-[100vw] h-[100svh] max-h-[100svh] min-h-[100svh]   z-50 bg-cover hero"
+            className="grid grid-cols-1 relative rounded-bottom-ellipse rounded-t-none p-0  md:grid-cols-2 gap-0  overflow-clip w-[100svw] max-w-[100svw] min-w-[100vw] h-[100svh] max-h-[100svh] min-h-[100svh]   z-50 bg-cover hero"
             style={{ backgroundImage: `url(${backgroundImageURL})` }}
         >
-            <div className="flex flex-col justify-center items-start backdrop-blur-lg bg-black/20  p-4">
+            <div className="flex flex-col h-full flex-1 -z-10 justify-center size items-start backdrop-blur-lg bg-black/50  p-8   ">
                 <h1 className="text-3xl md:text-5xl">PORTAFOLIO</h1>
                 <h2 className="text-xl md:text-3xl">Alexis Pantoja</h2>
-                <div className="flex flex-col md:flex-row gap-4 items-center justify-start  w-full">
+                <div className="flex  flex-row gap-4 items-center   w-full">
                     <Button className="w-full md:w-auto" variant="secondary">
                         Mira mi Arte
                     </Button>
@@ -20,7 +20,7 @@ function Hero() {
             </div>
 
             <img
-                className=" overflow-clip -mt-4 md:mt-0 object-cover h-full flex backdrop-blur-lg bg-black/20 "
+                className=" overflow-clip md:mt-0 object-cover z-0 h-full flex backdrop-blur-3xl rounded-bottom-ellipse rounded-t-none md:rounded-none -mt-2 "
                 src={backgroundImageURL}
                 alt="hero"
             />

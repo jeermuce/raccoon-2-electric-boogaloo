@@ -29,8 +29,13 @@ function Header() {
     return (
         <header
             id="header"
-            className=" z-[100] fixed top-0 w-full max-w-[1280px] transition-transform duration-300 -translate-y-full"
+            className="overflow-clip backdrop-blur-lg z-[100]  rounded-bottom-ellipse rounded-t-none bg-background/60 fixed top-0 w-full max-w-[1280px] transition-transform duration-300 -translate-y-full"
         >
+            <img
+                src="https://picsum.photos/128/48"
+                alt="logo"
+                className="min-h-full w-auto"
+            />
             <Nav />
         </header>
     );

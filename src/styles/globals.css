@@ -199,14 +199,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    height: 3rem;
+    height: clamp(3rem, 3rem, 3rem);
 }
 
 /* first child of footer and header */
 
-footer > *,
-header > *,
-main > * {
+footer>*,
+header>*,
+main>* {
     width: fit-content;
 }
 
@@ -224,16 +224,17 @@ details {
     cursor: pointer;
 }
 
-.zcale > img:not(:hover) {
+.zcale>img:not(:hover) {
     animation: zcale 2s;
 }
 
-.zcale > img:hover {
+.zcale>img:hover {
     scale: 110%;
     z-index: 100;
 }
 
 @keyframes zcale {
+
     0%,
     100% {
         z-index: 100;

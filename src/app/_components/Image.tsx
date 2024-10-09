@@ -7,7 +7,7 @@ function Image() {
     return (
         <img
             src={`https://picsum.photos/${getRandomNumber(40, 400)}/${getRandomNumber(40, 400)}`}
-            className="outline-1 outline-black  cursor-pointer transition-all duration-500 ease-in-out"
+            className="outline-1 outline-black  rounded-xl mb-4  cursor-pointer transition-all duration-500 ease-in-out"
             alt="Gallery"
         />
     );
