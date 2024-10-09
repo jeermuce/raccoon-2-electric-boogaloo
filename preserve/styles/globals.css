@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Fira Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Fira Sans Condensed", sans-serif;
+}
+
+h1 {
+    @apply text-5xl;
+}
+
+h2 {
+    @apply text-4xl;
+}
+
+h3 {
+    @apply text-3xl;
+}
+
+h4 {
+    @apply text-2xl;
+}
+
+h5 {
+    @apply text-xl;
+}
+
+h6 {
+    @apply text-lg;
+}
+
+@layer base {
+    .light {
+        --background: 0 0% 98%;
+        --foreground: 0 0% 15%;
+        --card: 0 0% 98%;
+        --card-foreground: 0 0% 15%;
+        --popover: 0 0% 98%;
+        --popover-foreground: 0 0% 15%;
+        --primary: 1 99% 28%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 200 99% 67%;
+        --secondary-foreground: 0 0% 15%;
+        --muted: 0 0% 20%;
+        --muted-foreground: 0 0% 70%;
+        --accent: 265 99% 48%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 85% 60%;
+        --destructive-foreground: 0 0% 15%;
+        --border: 0 0% 20%;
+        --input: 0 0% 20%;
+        --ring: 265 99% 40%;
+        --radius: 0.5rem;
+
+        /* New variables copied from shad */
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+    }
+
+    :root {
+        --background: 0 0% 2%;
+        --foreground: 0 0% 85%;
+        --card: 0 0% 2%;
+        --card-foreground: 0 0% 85%;
+        --popover: 0 0% 2%;
+        --popover-foreground: 0 0% 85%;
+        --primary: 1 99% 72%;
+        --primary-foreground: 0 0% 2%;
+        --secondary: 200 99% 33%;
+        --secondary-foreground: 0 0% 2%;
+        --muted: 0 0% 80%;
+        --muted-foreground: 0 0% 85%;
+        --accent: 265 99% 52%;
+        --accent-foreground: 0 0% 85%;
+        --destructive: 0 62% 30%;
+        --destructive-foreground: 0 0% 10%;
+        --border: 0 0% 60%;
+        --input: 0 0% 80%;
+        --ring: 265 99% 60%;
+        --radius: 0.5rem;
+        /* New variables copied from shad */
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+body,
+#root {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100svh;
+    @apply bg-background text-foreground;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    min-height: 0;
+    min-width: 0;
+    letter-spacing: inherit;
+    font: inherit;
+    border: none;
+    max-width: 100%;
+    font-size: clamp(16px, 2vw, 24px);
+    box-decoration-break: clone;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body,
+#root {
+    transition: none;
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    align-items: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: 100%;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem;
+}
+
+html {
+    color-scheme: dark light;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+    max-width: 80ch;
+    word-break: keep-all;
+    text-wrap: pretty;
+}
+
+main {
+    flex: 1 1 0%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+footer,
+header,
+main {
+    width: 100%;
+}
+
+footer,
+header {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 3rem;
+}
+
+/* first child of footer and header */
+
+footer > *,
+header > *,
+main > * {
+    width: fit-content;
+}
+
+summary {
+    list-style: none;
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    cursor: pointer;
+}
+
+details {
+    cursor: pointer;
+}
+
+.zcale > img:not(:hover) {
+    animation: zcale 2s;
+}
+
+.zcale > img:hover {
+    scale: 110%;
+    z-index: 100;
+}
+
+@keyframes zcale {
+    0%,
+    100% {
+        z-index: 100;
+    }
+}
+
+button {
+    border-radius: 4px;
+    border: solid 1px black;
+    padding: 2rem;
+    width: fit-content;
+    cursor: pointer;
+}
+
+input:user-invalid {
+    outline: solid 4px red;
+    outline-offset: -4px;
+}
+
+input:user-valid {
+    outline: solid 4px green;
+    outline-offset: -4px;
+}
+
+input,
+textarea,
+select,
+button {
+    font-size: 16px;
+    transition: none;
+}
