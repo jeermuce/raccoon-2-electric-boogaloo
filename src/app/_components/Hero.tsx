@@ -5,25 +5,37 @@ function Hero() {
     console.log(backgroundImageURL);
     return (
         <div
-            className="grid grid-cols-1 relative rounded-bottom-ellipse rounded-t-none p-0  md:grid-cols-2 gap-0  overflow-clip w-[100svw] max-w-[100svw] min-w-[100vw] h-[100svh] max-h-[100svh] min-h-[100svh]   z-50 bg-cover hero"
+            className="relative  rounded-ellipse rounded-t-none p-0 flex  flex-col md:flex-row  overflow-hidden w-[100lvw] max-w-[100lvw] min-w-[100lvw] h-[100svh] max-h-[100svh] min-h-[100svh]   z-50 bg-cover hero"
             style={{ backgroundImage: `url(${backgroundImageURL})` }}
         >
-            <div className="flex flex-col h-full flex-1 -z-10 justify-center size items-start backdrop-blur-lg bg-black/50  p-8   ">
-                <h1 className="text-3xl md:text-5xl">PORTAFOLIO</h1>
-                <h2 className="text-xl md:text-3xl">Alexis Pantoja</h2>
-                <div className="flex  flex-row gap-4 items-center   w-full">
-                    <Button className="w-full md:w-auto" variant="secondary">
+            <div className="flex overflow-hidden  flex-1 flex-col h-full md:gap-4 gap-1 -z-10 justify-center size items-start backdrop-blur-lg bg-black/50  md:p-8   ">
+                <div className="overflow-hidden max-h-full ">
+                    <h1 className="text-2xl md:text-4xl">Alexis Pantoja</h1>
+                    <h2 className="text-base md:text-2xl">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Reiciendis voluptate ipsum ipsam aspernatur corrupti.
+                    </h2>
+                </div>
+                <div className="flex sm:flex-nowrap  flex-row gap-4 items-center   w-full">
+                    <Button
+                        className="min-w-fit w-full md:w-auto"
+                        variant="secondary"
+                    >
                         Mira mi Arte
                     </Button>
-                    <Button className="w-full md:w-auto">Contacto</Button>
+                    <Button className="w-full min-w-fit md:w-auto">
+                        Contacto
+                    </Button>
                 </div>
             </div>
 
-            <img
-                className=" overflow-clip md:mt-0 object-cover z-0 h-full flex backdrop-blur-3xl rounded-bottom-ellipse rounded-t-none md:rounded-none -mt-2 "
-                src={backgroundImageURL}
-                alt="hero"
-            />
+            <div className="backdrop-blur-3xl w-1/2 h-full">
+                <img
+                    className="w-full  object-cover h-full"
+                    src={backgroundImageURL}
+                    alt="hero"
+                />
+            </div>
         </div>
     );
 }

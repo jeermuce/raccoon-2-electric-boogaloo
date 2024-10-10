@@ -13,7 +13,7 @@ export default {
                 lg: "var(--radius)",
                 md: "calc(var(--radius) - 2px)",
                 sm: "calc(var(--radius) - 4px)",
-                "bottom-ellipse": "100% 100% / 1rem 1rem",
+                ellipse: "100% 100% / 1rem 1rem",
             },
             colors: {
                 background: "hsl(var(--background))",
@@ -55,6 +55,9 @@ export default {
                     "3": "hsl(var(--chart-3))",
                     "4": "hsl(var(--chart-4))",
                     "5": "hsl(var(--chart-5))",
+                },
+                shadow: {
+                    glow: "0 0 15px 5px hsl(var(--accent))",
                 },
             },
         },

@@ -29,7 +29,7 @@ function Header() {
     return (
         <header
             id="header"
-            className="overflow-clip backdrop-blur-lg z-[100]  rounded-bottom-ellipse rounded-t-none bg-background/60 fixed top-0 w-full max-w-[1280px] transition-transform duration-300 -translate-y-full"
+            className="overflow-hidden backdrop-blur-lg z-[100]  rounded-ellipse rounded-t-none bg-background/60 fixed top-0 w-full max-w-[80rem] transition-transform duration-300 -translate-y-full"
         >
             <img
                 src="https://picsum.photos/128/48"
