@@ -1,9 +1,17 @@
 import "@/styles/globals.css";
-
+import { TRPCReactProvider } from "@/trpc/react";
+import {
+    ClerkProvider,
+    SignInButton,
+    SignedIn,
+    SignedOut,
+    UserButton,
+} from "@clerk/nextjs";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-
-import { TRPCReactProvider } from "@/trpc/react";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "./api/uploadthing/core";
 
 export const metadata: Metadata = {
     title: "Create T3 App",
@@ -15,10 +23,21 @@ export default function RootLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en" className={`${GeistSans.variable}`}>
-            <body className=" ">
-                <TRPCReactProvider>{children}</TRPCReactProvider>
-            </body>
-        </html>
+        <ClerkProvider>
+            <html lang="en" className={`${GeistSans.variable}`}>
+                <body className=" ">
+                    <NextSSRPlugin
+                        /**
+                         * The `extractRouterConfig` will extract **only** the route configs
+                         * from the router to prevent additional information from being
+                         * leaked to the client. The data passed to the client is the same
+                         * as if you were to fetch `/api/uploadthing` directly.
+                         */
+                        routerConfig={extractRouterConfig(ourFileRouter)}
+                    />
+                    <TRPCReactProvider>{children}</TRPCReactProvider>
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }

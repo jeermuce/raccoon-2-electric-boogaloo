@@ -1,4 +1,8 @@
+"use client";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
+import { UploadButton } from "@/utils/uploadthing";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { toast } from "sonner";
 
 function Nav() {
     return (

@@ -12,8 +12,8 @@ import { index, int, sqliteTableCreator, text } from "drizzle-orm/sqlite-core";
  */
 export const createTable = sqliteTableCreator((name) => `raccoon_${name}`);
 
-export const posts = createTable(
-    "post",
+export const images = createTable(
+    "image",
     {
         id: int("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
         name: text("name", { length: 256 }),
@@ -23,6 +23,7 @@ export const posts = createTable(
         updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
             () => new Date(),
         ),
+        url: text("url", { length: 256 }).notNull(),
     },
     (example) => ({
         nameIndex: index("name_idx").on(example.name),

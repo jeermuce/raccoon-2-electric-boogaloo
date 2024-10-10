@@ -1,4 +1,8 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { UploadButton, UploadDropzone } from "@/utils/uploadthing";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { toast } from "sonner";
 
 function Hero() {
     const backgroundImageURL = process.env.NEXT_PUBLIC_IMG;
@@ -26,6 +30,21 @@ function Hero() {
                     <Button className="w-full min-w-fit md:w-auto">
                         Contacto
                     </Button>
+
+                    <SignedIn>
+                        <UploadDropzone
+                            endpoint="bulkImages"
+                            onClientUploadComplete={(res) => {
+                                // Do something with the response
+                                console.log("Files: ", res);
+                                toast.success("Upload Completed");
+                            }}
+                            onUploadError={(error: Error) => {
+                                // Do something with the error.
+                                toast.error(`ERROR! ${error.message}`);
+                            }}
+                        />
+                    </SignedIn>
                 </div>
             </div>
 
