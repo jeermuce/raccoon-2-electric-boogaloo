@@ -8,6 +8,7 @@ import {
     UserButton,
 } from "@clerk/nextjs";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import { extractRouterConfig } from "uploadthing/server";
@@ -36,6 +37,7 @@ export default function RootLayout({
                         routerConfig={extractRouterConfig(ourFileRouter)}
                     />
                     <TRPCReactProvider>{children}</TRPCReactProvider>
+                    <SpeedInsights />
                 </body>
             </html>
         </ClerkProvider>
