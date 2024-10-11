@@ -1,4 +1,4 @@
-import { auth, authMiddleware } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import { type FileRouter, createUploadthing } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 
