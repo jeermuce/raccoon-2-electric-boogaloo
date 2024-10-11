@@ -6,24 +6,14 @@ import Header from "./_components/Header";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
+import Footer from "./_components/Footer";
 
 export default async function Home() {
     return (
         <HydrateClient>
             <Header />
             <Landing />
-            <footer className="bg-background h-fit pt-10 flex flex-col items-center justify-center">
-                <div className="columns-[300px] w-full">
-                    <SignedIn>
-                        <UserButton />
-                    </SignedIn>
-                    <SignedOut>
-                        <Button className="" type="button">
-                            <SignInButton />
-                        </Button>
-                    </SignedOut>
-                </div>
-            </footer>
+            <Footer />
         </HydrateClient>
     );
 }
