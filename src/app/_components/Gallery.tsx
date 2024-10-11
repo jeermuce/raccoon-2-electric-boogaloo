@@ -1,7 +1,7 @@
 import React from "react";
 
-import { api } from "@/trpc/server";
 import { Button } from "@/components/ui/button";
+import { api } from "@/trpc/server";
 import { SignedIn } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 

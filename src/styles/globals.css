@@ -210,9 +210,9 @@ header {
 
 /* first child of footer and header */
 
-footer>*,
-header>*,
-main>* {
+footer > *,
+header > *,
+main > * {
     width: fit-content;
 }
 
@@ -230,17 +230,16 @@ details {
     cursor: pointer;
 }
 
-.zcale>img:not(:hover) {
+.zcale > img:not(:hover) {
     animation: zcale 2s;
 }
 
-.zcale>img:hover {
+.zcale > img:hover {
     scale: 110%;
     z-index: 100;
 }
 
 @keyframes zcale {
-
     0%,
     100% {
         z-index: 100;
@@ -273,26 +272,26 @@ button {
     transition: none;
 }
 
-
 .content-grid {
     display: grid;
-    grid-template-columns:
-        [all-start] 1fr [big-start] 1fr [mid-start] 1fr [sml-start] min(80ch, 80%) [sml-end] 1fr [mid-end] 1fr [big-end] 1fr [all-end];
+    grid-template-columns: [all-start] 1fr [big-start] 1fr [mid-start] 1fr [sml-start] min(
+            80ch,
+            80%
+        ) [sml-end] 1fr [mid-end] 1fr [big-end] 1fr [all-end];
 }
 
-
-.content-grid>.big {
+.content-grid > .big {
     grid-column: big-start / big-end;
 }
 
-.content-grid>.mid {
+.content-grid > .mid {
     grid-column: mid-start / mid-end;
 }
 
-.content-grid>.all {
+.content-grid > .all {
     grid-column: all-start / all-end;
 }
 
-.content-grid>* {
+.content-grid > * {
     grid-column: sml-start / sml-end;
 }

@@ -11,7 +11,7 @@ function Hero() {
         <div
             className=" h-[100svh] w-full bg-cover rounded-t-none z-50 rounded-ellipse  all"
             style={{ backgroundImage: `url(${backgroundImageURL})` }}
-        ></div>
+        />
     );
 }
 
