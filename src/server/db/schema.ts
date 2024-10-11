@@ -2,7 +2,13 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { sql } from "drizzle-orm";
-import { index, int, sqliteTableCreator, text } from "drizzle-orm/sqlite-core";
+import {
+    index,
+    int,
+    real,
+    sqliteTableCreator,
+    text,
+} from "drizzle-orm/sqlite-core";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -12,11 +18,19 @@ import { index, int, sqliteTableCreator, text } from "drizzle-orm/sqlite-core";
  */
 export const createTable = sqliteTableCreator((name) => `raccoon_${name}`);
 
-export const images = createTable(
-    "image",
+export const artwork = createTable(
+    "artwork",
     {
         id: int("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
-        name: text("name", { length: 256 }),
+        title: text("title", { length: 256 }).notNull(),
+        description: text("description"),
+        medium: text("medium", { length: 256 }),
+        dimensions: text("dimensions", { length: 256 }),
+        price: real("price"),
+        isForSale: int("is_for_sale").default(0).notNull(), // Use 0 for false, 1 for true
+        dateCreated: int("date_created", { mode: "timestamp" })
+            .default(sql`(unixepoch())`)
+            .notNull(),
         createdAt: int("created_at", { mode: "timestamp" })
             .default(sql`(unixepoch())`)
             .notNull(),
@@ -24,8 +38,13 @@ export const images = createTable(
             () => new Date(),
         ),
         url: text("url", { length: 256 }).notNull(),
+        tags: text("tags"),
+        artistName: text("artist_name", { length: 256 }).notNull(),
+        collection: text("collection", { length: 256 }),
+        location: text("location", { length: 256 }),
+        sfw: int("sfw").default(0).notNull(), // Defaults to 0 (NSFW)
     },
     (example) => ({
-        nameIndex: index("name_idx").on(example.name),
+        titleIndex: index("title_idx").on(example.title),
     }),
 );

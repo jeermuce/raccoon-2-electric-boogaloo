@@ -15,9 +15,9 @@ import { UploadDropzone } from "@/utils/uploadthing";
 import { Button } from "@/components/ui/button";
 
 export default async function Home() {
-    const hello = await api.image.hello({ text: "from tRPC" });
+    const hello = await api.art.hello({ text: "from tRPC" });
 
-    void api.image.getLatest.prefetch();
+    void api.art.getLatest.prefetch();
 
     return (
         <HydrateClient>
