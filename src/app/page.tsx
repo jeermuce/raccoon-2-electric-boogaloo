@@ -3,22 +3,11 @@ import Link from "next/link";
 import { HydrateClient, api } from "@/trpc/server";
 import Landing from "./Landing";
 import Header from "./_components/Header";
-import {
-    SignedIn,
-    SignedOut,
-    SignIn,
-    SignInButton,
-    UserButton,
-    UserProfile,
-} from "@clerk/nextjs";
-import { UploadDropzone } from "@/utils/uploadthing";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
 import { Button } from "@/components/ui/button";
 
 export default async function Home() {
-    const hello = await api.art.hello({ text: "from tRPC" });
-
-    void api.art.getLatest.prefetch();
-
     return (
         <HydrateClient>
             <Header />
