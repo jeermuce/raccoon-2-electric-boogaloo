@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import type { PluginAPI } from "tailwindcss/types/config";
 import { withUt } from "uploadthing/tw";
 export default withUt({
     darkMode: ["class"],
@@ -62,5 +63,14 @@ export default withUt({
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [
+        require("tailwindcss-animate"),
+        function ({ addVariant }: PluginAPI) {
+            addVariant("child", "& > *");
+            addVariant("child-hover", "& > *:hover");
+            addVariant("parent", ":not(:empty) > &");
+            addVariant("parent-hover", ":not(:empty) > &:hover");
+            addVariant("descendants", "& *");
+        },
+    ],
 }) satisfies Config;
