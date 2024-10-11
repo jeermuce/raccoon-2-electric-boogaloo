@@ -1,7 +1,7 @@
 import React from "react";
 
-import { api } from "@/trpc/server";
 import { Button } from "@/components/ui/button";
+import { api } from "@/trpc/server";
 import { SignedIn } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 
@@ -10,7 +10,7 @@ async function Gallery() {
     const isSignedIn = auth().sessionId !== null;
 
     return (
-        <div className="columns-[300px]  z-30 bg-background/80 rounded-t-none overflow-hidden rounded-ellipse py-8   w-full gap-4 ">
+        <div className="columns-[300px]  z-30 bg-background rounded-t-none overflow-hidden mid rounded-ellipse py-8 px-4   w-full gap-4 ">
             {[
                 ...response,
                 ...response,

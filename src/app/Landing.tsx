@@ -5,7 +5,7 @@ import Hero from "./_components/Hero";
 
 function Landing() {
     return (
-        <main className=" flex flex-col items-center   ">
+        <main className="content-grid  ">
             <Hero />
             <Cut zindex={40} />
             <Gallery />
