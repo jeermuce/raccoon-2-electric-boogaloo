@@ -4,8 +4,8 @@
     "id": "c0374249-d2cf-44a0-b385-807e7b349411",
     "prevId": "00000000-0000-0000-0000-000000000000",
     "tables": {
-        "raccoon_post": {
-            "name": "raccoon_post",
+        "raccoon_post ": {
+            "name": "raccoon_post ",
             "columns": {
                 "id": {
                     "name": "id",
